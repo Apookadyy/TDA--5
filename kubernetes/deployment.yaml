@@ -1,0 +1,20 @@
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: high-performance-app
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: high-performance-app
+  template:
+    metadata:
+      labels:
+        app: high-performance-app
+    spec:
+      containers:
+      - name: app
+        image: high-performance-app:latest
+        ports:
+        - containerPort: 8000
